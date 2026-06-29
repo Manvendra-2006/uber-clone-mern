@@ -5,5 +5,5 @@ router.post("/register",RegisterController)
 router.post("/login",loginController)
 router.get("/logout",logout)
 router.get("/refresh-token",RefreshTokenController)
-router.get("/get-me",getMeController)
+router.get("/userProfile",getMeController)
 export default router

@@ -1,0 +1,53 @@
+import mongoose from "mongoose";
+const captainSchema = new mongoose.Schema({
+    name:{
+        type:String,
+        required:true
+    },
+    email:{
+        type:String,
+        required:true
+    },
+    password:{
+        type:String,
+        required:true,        
+    },
+    socketId:{
+        type:String
+    },
+    status:{
+        type:String,
+        enum:['active','inactive'],
+        default:'inactive'
+    },    
+    vehicle:{
+        color:{
+            type:String,
+            required:true,
+        },
+        plate:{
+            type:String,
+            required:true,
+        },
+        capacity:{
+            type:Number,
+            required:true,
+            min:1
+        },
+        vehicleType:{
+            type:String,
+            required:true,
+            enum:['car','motorcycle','auto']
+        },
+    },
+    location:{
+        lat:{
+            type:Number
+        },
+        lon:{
+            type:Number,
+        }
+    }
+
+})
+export default mongoose.model("Captain",captainSchema)
